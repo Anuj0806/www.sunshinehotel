@@ -39,7 +39,7 @@
 <script>
     function encryptAES(plainText) {
         var key = CryptoJS.enc.Utf8.parse("Pass@Protect#ANU"); // 16-byte key
-        var iv = CryptoJS.enc.Utf8.parse("InitVector89ANU");  // 16-byte IV
+        var iv = CryptoJS.enc.Utf8.parse("InitVector89ANUJ");  // 16-byte IV
 
         var encrypted = CryptoJS.AES.encrypt(plainText, key, {
             iv: iv,
