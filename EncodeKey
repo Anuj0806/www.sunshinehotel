@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Encrypt Product Key</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap for styling (optional) -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- CryptoJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+</head>
+<body class="bg-light">
+
+<div class="container mt-5">
+    <div class="card p-4 shadow-lg rounded" style="max-width: 600px; margin: auto;">
+        <h4 class="mb-4 text-center">Encrypt Product Key</h4>
+
+        <div class="mb-3">
+            <label for="biometric" class="form-label">Biometric Count</label>
+            <input type="number" id="biometric" class="form-control" placeholder="Enter biometric count">
+        </div>
+
+        <div class="mb-3">
+            <label for="employee" class="form-label">Employee Count</label>
+            <input type="number" id="employee" class="form-control" placeholder="Enter employee count">
+        </div>
+
+        <div class="mb-3">
+            <label for="date" class="form-label">Date (yyyy-MM-dd HH:mm:ss)</label>
+            <input type="datetime-local" id="date" class="form-control">
+        </div>
+
+        <button class="btn btn-primary w-100" onclick="generateKey()">Generate Encrypted Key</button>
+
+        <div id="result" class="mt-4 text-break"></div>
+    </div>
+</div>
+
+<script>
+    function encryptAES(plainText) {
+        var key = CryptoJS.enc.Utf8.parse("1234567890123456"); // 16-byte key
+        var iv = CryptoJS.enc.Utf8.parse("abcdefghijklmnop");  // 16-byte IV
+
+        var encrypted = CryptoJS.AES.encrypt(plainText, key, {
+            iv: iv,
+            mode: CryptoJS.mode.CBC,
+            padding: CryptoJS.pad.Pkcs7
+        });
+
+        return encrypted.toString(); // Base64
+    }
+
+    function dateToYYMMDDHHMMSS(date) {
+        const pad = (n) => n.toString().padStart(2, '0');
+        return date.getFullYear().toString().slice(2) +
+            pad(date.getMonth() + 1) +
+            pad(date.getDate()) +
+            pad(date.getHours()) +
+            pad(date.getMinutes()) +
+            pad(date.getSeconds());
+    }
+
+    function generateKey() {
+        const biometric = parseInt(document.getElementById("biometric").value.trim());
+        const employee = parseInt(document.getElementById("employee").value.trim());
+        const dateInput = document.getElementById("date").value;
+
+        if (isNaN(biometric) || isNaN(employee) || !dateInput) {
+            document.getElementById("result").innerHTML = `<div class="alert alert-danger">Please fill all fields correctly.</div>`;
+            return;
+        }
+
+        const date = new Date(dateInput);
+        const formattedDate = dateToYYMMDDHHMMSS(date);
+        const biometricBin = biometric.toString(2);
+        const employeeBin = employee.toString(2);
+
+        const plainKey = `${biometricBin}-${formattedDate}-${employeeBin}`;
+        const encryptedKey = encryptAES(plainKey);
+
+        document.getElementById("result").innerHTML = `
+            <div class="alert alert-success">
+                <strong>Encrypted Key:</strong><br/>
+                <code>${encryptedKey}</code>
+            </div>
+        `;
+    }
+</script>
+
+</body>
+</html>
