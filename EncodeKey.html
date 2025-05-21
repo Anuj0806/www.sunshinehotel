@@ -38,8 +38,8 @@
 
 <script>
     function encryptAES(plainText) {
-        var key = CryptoJS.enc.Utf8.parse("1234567890123456"); // 16-byte key
-        var iv = CryptoJS.enc.Utf8.parse("abcdefghijklmnop");  // 16-byte IV
+        var key = CryptoJS.enc.Utf8.parse("Pass@Protect#1524_dataAnuj"); // 16-byte key
+        var iv = CryptoJS.enc.Utf8.parse("Pass@Protect#1524_dataAnuj");  // 16-byte IV
 
         var encrypted = CryptoJS.AES.encrypt(plainText, key, {
             iv: iv,
