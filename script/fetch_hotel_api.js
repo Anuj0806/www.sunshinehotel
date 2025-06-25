@@ -17,7 +17,7 @@ function showSkeletonLoading() {
 
 const rooms = [
     {
-        "photo": "https://img-cdn.pixlr.com/image-generator/history/65bb506dcb310754719cf81f/ede935de-1138-4f66-8ed7-44bd16efc709/medium.webp",
+        "photo": "https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg",
         "hotel_id": 1,
         "description": "123 Main St, Cityville BEST ROOM",
         "ac_nonac": "Non AC",
