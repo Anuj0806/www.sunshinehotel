@@ -1221,7 +1221,7 @@ function formatDateTime(isoString) {
 function getRoomNumberById(room_id) {
     const rooms = [
         {
-            "photo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQf5JbWUQApKbde0mcDHJ-DxU3llLO1070PA&s",
+            "photo": "https://images.pexels.com/photos/164595/pexels-photo-164595.jpeg",
             "hotel_id": 1,
             "description": "123 Main St, Cityville BEST ROOM",
             "ac_nonac": "Non AC",
