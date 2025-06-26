@@ -70,10 +70,10 @@ let rooms_json = filteredRooms.filter(room => room.pending === "UR");
 function onloadguestloginpage() {
     showSkeletonLoading();
     document.querySelectorAll(".footer_data").forEach(function (element) {
-        element.innerHTML = "ABCD HOTALS";
+        element.innerHTML = "RAJ HOTALS";
     });
     document.querySelectorAll(".footer_data_lic").forEach(function (element) {
-        element.innerHTML = "&copy; 2023  ABCD HOTELS";
+        element.innerHTML = "&copy; 2023  RAJ HOTELS";
     });
     displayHotels(rooms_json);
 }
