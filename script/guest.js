@@ -1,10 +1,10 @@
 var public_key = "Bc6Q0uME5PARDagYq";
 function footerFunction() {
     document.querySelectorAll(".footer_data").forEach(function (element) {
-        element.innerHTML = "ABCD HOTELS";
+        element.innerHTML = "RAJ HOTELS";
     });
     document.querySelectorAll(".footer_data_inc").forEach(function (element) {
-        element.innerHTML = "&copy; 2023 ABCD HOTELS";
+        element.innerHTML = "&copy; 2023 RAJ HOTELS";
     });
 }
 
