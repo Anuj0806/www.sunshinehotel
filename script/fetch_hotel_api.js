@@ -74,10 +74,10 @@ function onloadhomepage() {
     showSkeletonLoading();
     displayHotels_admin(rooms_json);
     document.querySelectorAll(".footer_data").forEach(function (element) {
-        element.innerHTML = "ABCD HOTALS";
+        element.innerHTML = "RAJ HOTEL";
     });
     document.querySelectorAll(".footer_data_lic").forEach(function (element) {
-        element.innerHTML = "&copy; 2023  ABCD HOTELS";
+        element.innerHTML = "&copy; 2023  RAJ HOTEL";
     });
 }
 
