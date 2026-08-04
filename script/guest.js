@@ -1,4 +1,4 @@
-var public_key = "Bc6Q0uME5PARDagYq";
+var public_key = "bpmh uywd rxmf pnpa";
 function footerFunction() {
     document.querySelectorAll(".footer_data").forEach(function (element) {
         element.innerHTML = "RAJ HOTELS";
