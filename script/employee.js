@@ -1,5 +1,5 @@
 // Function to dynamically load a script
-var public_key = "Bc6Q0uME5PARDagYq";
+var public_key = "bpmh uywd rxmf pnpa";
 
 function resendOTP() {
     // Your logic to resend OTP
